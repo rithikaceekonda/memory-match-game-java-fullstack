@@ -1,0 +1,22 @@
+﻿# Java compiled files and build output
+*.class
+*.log
+target/
+**/target/
+build/
+**/build/
+
+# IDE settings
+.vscode/
+.idea/
+*.iml
+
+# Environment variables and local secrets
+.env
+.env.*
+!.env.example
+
+# Local configuration overrides
+application-local.properties
+application-local.yml
+application-local.yaml

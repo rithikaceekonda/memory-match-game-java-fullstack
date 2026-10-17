@@ -1,0 +1,20 @@
+
+CREATE TABLE players (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE game_results (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    player_id BIGINT NOT NULL,
+    score INT NOT NULL DEFAULT 0,
+    moves INT NOT NULL DEFAULT 0,
+    completed BOOLEAN NOT NULL DEFAULT FALSE,
+    played_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    CONSTRAINT fk_game_results_player
+        FOREIGN KEY (player_id)
+        REFERENCES players(id)
+);
